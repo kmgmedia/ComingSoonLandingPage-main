@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #031321;
+  --color-ocean: #38bdf8;
+  --color-ocean-light: #8bdcff;
+  --font-sans:
+    "Manrope", "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui,
+    sans-serif;
+}
+
+:root {
+  color: white;
+  background: var(--color-navy);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-navy);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-ocean-light);
+  outline-offset: 4px;
+}
+
+.site-shell {
+  width: min(100% - 2.5rem, 88rem);
+  margin-inline: auto;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(3, 19, 33, 0.98) 0%, rgba(3, 19, 33, 0.9) 42%, rgba(3, 19, 33, 0.42) 100%),
+    linear-gradient(0deg, rgba(3, 19, 33, 0.8) 0%, rgba(3, 19, 33, 0.06) 48%, rgba(3, 19, 33, 0.45) 100%);
+}
+
+.ocean-glow {
+  background: radial-gradient(
+    circle at 76% 48%,
+    rgba(14, 165, 233, 0.12),
+    transparent 34%
+  );
+}
+
+.contact-button {
+  display: inline-flex;
+  min-width: 11.5rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem 1.1rem 1rem 1.25rem;
+  color: white;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
+}
+
+a.contact-button:hover {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+
+.contact-arrow {
+  position: relative;
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.contact-arrow::after {
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.hero-enter {
+  animation: hero-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-delay {
+  animation-delay: 140ms;
+}
+
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 639px) {
+  .site-shell {
+    width: min(100% - 2rem, 88rem);
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(3, 19, 33, 0.96), rgba(3, 19, 33, 0.76)),
+      linear-gradient(0deg, rgba(3, 19, 33, 0.9), transparent 60%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

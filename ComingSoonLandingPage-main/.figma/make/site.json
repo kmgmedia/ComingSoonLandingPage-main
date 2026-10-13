@@ -1,0 +1,10 @@
+{
+  "description": "A premium responsive landing page that announces the upcoming launch of an offshore marine logistics company’s website, offering contact access and brand trust.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
